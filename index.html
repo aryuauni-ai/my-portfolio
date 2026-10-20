@@ -1,0 +1,374 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio | Personal Website</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #121a2d;
+      --accent: #62e6c5;
+      --text: #f2f5ff;
+      --muted: #a6b0c5;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      background: rgba(11, 16, 32, 0.96);
+    }
+
+    .navbar-brand, .nav-link {
+      color: var(--text) !important;
+    }
+
+    .navbar-brand span, .accent {
+      color: var(--accent);
+    }
+
+    .nav-link:hover { color: var(--accent) !important; }
+
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      align-items: center;
+      padding: 90px 0;
+    }
+
+    .tag {
+      color: var(--accent);
+      border: 1px solid #285d57;
+      background: #122b2d;
+      padding: 8px 14px;
+      border-radius: 30px;
+      display: inline-block;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-weight: 800;
+      line-height: 1.12;
+    }
+
+    .hero p, .muted {
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .btn-accent {
+      background: var(--accent);
+      color: #08131a;
+      border: 1px solid var(--accent);
+      font-weight: bold;
+      padding: 12px 22px;
+    }
+
+    .btn-accent:hover {
+      background: transparent;
+      color: var(--accent);
+    }
+
+    .btn-outline-custom {
+      border: 1px solid #44516a;
+      color: var(--text);
+      padding: 12px 22px;
+    }
+
+    .btn-outline-custom:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    section { padding: 80px 0; }
+
+    .section-title {
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .section-line {
+      width: 55px;
+      height: 4px;
+      background: var(--accent);
+      margin-bottom: 35px;
+      border-radius: 5px;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid #263149;
+      border-radius: 18px;
+      padding: 28px;
+      height: 100%;
+      transition: transform .2s, border-color .2s;
+    }
+
+    .panel:hover {
+      transform: translateY(-5px);
+      border-color: var(--accent);
+    }
+
+    .skill {
+      display: inline-block;
+      background: #202b41;
+      border: 1px solid #34425b;
+      color: #dce6f8;
+      padding: 9px 14px;
+      border-radius: 8px;
+      margin: 5px 5px 5px 0;
+    }
+
+    .project-number {
+      font-size: 2rem;
+      color: var(--accent);
+      font-weight: bold;
+      margin-bottom: 12px;
+    }
+
+    a { text-decoration: none; }
+
+    footer {
+      border-top: 1px solid #263149;
+      padding: 25px 0;
+      color: var(--muted);
+    }
+
+    @media (max-width: 576px) {
+      .hero { min-height: auto; padding: 100px 0 65px; }
+      section { padding: 60px 0; }
+      .panel { padding: 22px; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#home">
+        My<span>Portfolio.</span>
+      </a>
+
+      <button class="navbar-toggler bg-light" type="button"
+              data-bs-toggle="collapse" data-bs-target="#navMenu"
+              aria-controls="navMenu" aria-expanded="false"
+              aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto gap-lg-3">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero" id="home">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-8">
+          <span class="tag">Welcome to my portfolio</span>
+
+          <h1>Hello, I'm <span class="accent">Your Name</span><br>
+            A Future Web Developer.
+          </h1>
+
+          <p class="fs-5 mt-4">
+            I am a student passionate about technology, programming,
+            and creating clean, user-friendly websites.
+            This portfolio showcases my skills, learning journey,
+            and projects.
+          </p>
+
+          <div class="d-flex flex-wrap gap-3 mt-4">
+            <a href="#projects" class="btn btn-accent">View My Work</a>
+            <a href="#contact" class="btn btn-outline-custom">Contact Me</a>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="panel text-center">
+            <div class="project-number">01</div>
+            <h3>Learning by Building</h3>
+            <p class="muted mb-0">
+              Every project is an opportunity to learn, improve,
+              and turn ideas into reality.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <h2 class="section-title">About Me</h2>
+      <div class="section-line"></div>
+
+      <div class="row g-4">
+        <div class="col-lg-8">
+          <div class="panel">
+            <h4>Who I Am</h4>
+            <p class="muted mt-3">
+              My name is Your Name. I am a college student interested
+              in web development and computer science. I enjoy learning
+              new technologies, solving problems, and developing my
+              technical skills through practical projects.
+            </p>
+            <p class="muted mb-0">
+              My current goal is to build a strong foundation in HTML,
+              CSS, and responsive web design.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="panel">
+            <h4>Personal Details</h4>
+            <p class="muted mt-3 mb-2">
+              <strong class="text-light">Education:</strong>
+              College Student
+            </p>
+            <p class="muted mb-2">
+              <strong class="text-light">Field:</strong>
+              Web Development
+            </p>
+            <p class="muted mb-0">
+              <strong class="text-light">Location:</strong>
+              Egypt
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills">
+    <div class="container">
+      <h2 class="section-title">My Skills</h2>
+      <div class="section-line"></div>
+
+      <div class="panel">
+        <p class="muted">
+          Technologies I am learning and using in my projects:
+        </p>
+        <div class="mt-3">
+          <span class="skill">HTML5</span>
+          <span class="skill">CSS3</span>
+          <span class="skill">Bootstrap 5</span>
+          <span class="skill">Responsive Design</span>
+          <span class="skill">Problem Solving</span>
+          <span class="skill">GitHub</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects">
+    <div class="container">
+      <h2 class="section-title">My Projects</h2>
+      <div class="section-line"></div>
+
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="panel">
+            <div class="project-number">01</div>
+            <h4>Personal Portfolio</h4>
+            <p class="muted">
+              A responsive personal website built with HTML, CSS,
+              and Bootstrap to present my profile and skills.
+            </p>
+            <span class="skill">HTML</span>
+            <span class="skill">CSS</span>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="panel">
+            <div class="project-number">02</div>
+            <h4>Landing Page</h4>
+            <p class="muted">
+              A clean landing page concept designed to present
+              information in a clear and attractive layout.
+            </p>
+            <span class="skill">HTML</span>
+            <span class="skill">Bootstrap</span>
+          </div>
+        </div>
+
+        <div class="col-md-6 col-lg-4">
+          <div class="panel">
+            <div class="project-number">03</div>
+            <h4>Coming Soon</h4>
+            <p class="muted">
+              I am continuing to learn and work on new projects.
+              More work will be added as my skills develop.
+            </p>
+            <span class="skill">Learning</span>
+            <span class="skill">Practice</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <div class="panel text-center">
+        <h2 class="section-title">Let's Connect</h2>
+        <p class="muted">
+          Feel free to contact me or explore my GitHub profile.
+        </p>
+
+        <div class="d-flex flex-wrap justify-content-center gap-3 mt-4">
+          <a class="btn btn-accent"
+             href="mailto:your.email@example.com">
+            Email Me
+          </a>
+          <a class="btn btn-outline-custom"
+             href="https://github.com/YOUR-USERNAME"
+             target="_blank" rel="noopener noreferrer">
+            GitHub Profile
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container text-center">
+      <p class="mb-1">
+        © 2026 Your Name. All rights reserved.
+      </p>
+      <small>Designed and built with HTML, CSS and Bootstrap.</small>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
